@@ -88,26 +88,26 @@
     overflow: hidden; /* Ensure the background overlay doesn't overflow */
     /* Add a dark overlay */
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                url('C:/Users/User/Desktop/convocation/one.jpg');
+                url('one.jpg');
 
     animation: changeBackground 40s infinite; /* Adjust the duration as needed */
 }
 
 @keyframes changeBackground {
     0%, 25% {
-        background-image: url('C:/Users/User/Desktop/convocation/one.jpg');
+        background-image: url('one.jpg');
         background-position: left;
     }
     25%, 50% {
-        background-image: url('C:/Users/User/Desktop/convocation/fifteen.jpg');
+        background-image: url('fifteen.jpg');
         background-position: center;
     }
     50%, 75% {
-        background-image: url('C:/Users/User/Desktop/convocation/seven.jpg');
+        background-image: url('seven.jpg');
         background-position: right;
     }
     75%, 100% {
-        background-image: url('C:/Users/User/Desktop/convocation/one.jpg');
+        background-image: url('one.jpg');
         background-position: left;
     }
 }
