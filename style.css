@@ -1,0 +1,468 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+.imag {
+    flex: 1; /* Expand to fill remaining space */
+    display: flex;
+    justify-content: center; /* Center child elements horizontally */
+    align-items: flex-start; /* Align child elements to the top */
+}
+.eastc {
+    width: 100%;
+}
+
+.eastc img {
+    display: block;
+    width: 100%;
+    height: 15vh;
+}
+.container{
+	position: relative;
+	width: 100%;
+	background-color: #3276B1;
+	background-size: cover;
+	background-position: center;
+	font-family: Arial, Helvetica, sans-serif;
+	transition: background-color 0.5s ease;
+    z-index: 1000; /* Ensure the container stays above other elements */
+    display: flex;
+    justify-content: flex-end;
+
+}
+.fixed {
+    position: fixed; /* Fix the container at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background when fixed */
+}
+.nav-bar{
+	display: flex;
+	align-items: center;
+	padding: 30px 80px;
+	width: 100%;
+	justify-content: flex-end;
+}
+.menu{
+	display: flex;
+	list-style: none;
+}
+.menu li{
+	margin-left: 20px;
+
+}
+.menu li a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	margin-left: 25px;
+	transition: .4s ease;
+}
+.menu li a:hover{
+	color: crimson;
+	padding: 8px 30px;
+	border: 2px solid #fff;
+}
+
+.menu li a.active {
+    color: crimson;
+    border-bottom: 2px solid #fff; /* Border for active and hovered links */
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Ensure the background overlay doesn't overflow */
+    /* Add a dark overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('C:/Users/User/Desktop/convocation/one.jpg');
+
+    animation: changeBackground 40s infinite; /* Adjust the duration as needed */
+}
+
+@keyframes changeBackground {
+    0%, 25% {
+        background-image: url('C:/Users/User/Desktop/convocation/one.jpg');
+        background-position: left;
+    }
+    25%, 50% {
+        background-image: url('C:/Users/User/Desktop/convocation/fifteen.jpg');
+        background-position: center;
+    }
+    50%, 75% {
+        background-image: url('C:/Users/User/Desktop/convocation/seven.jpg');
+        background-position: right;
+    }
+    75%, 100% {
+        background-image: url('C:/Users/User/Desktop/convocation/one.jpg');
+        background-position: left;
+    }
+}
+       
+
+.intro h2{
+	font-family: sans-serif;
+	font-size: 35px;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0;
+	  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+.intro p1{
+	font-size: 25px;
+	font-weight: 600;
+	color: #d1d1d1;
+	margin: 50px 0;
+	text-align: center;
+	  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); 
+}
+.intro button{
+	background-color: #3276B1;
+	color: #000;
+	padding: 10px 25px;
+	border: none;
+	border-radius: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 0px 0px 20px rgba(255, 255, 255, 2);
+}
+.intro button:hover{
+	background-color: brown;
+}
+.theme-container {
+ 
+  overflow: hidden; /* Clip overflowing content initially */
+  transition: height 0.2s ease-in-out; /* Transition for container height */
+  /* Additional styles for initial state */
+  height: 0; /* Initially hidden */
+  padding: 0; /* Remove default padding */
+  position: absolute; /* Position absolutely for stacking */
+  bottom: 1%; /* Position at the bottom */
+  left: 15%; /* Position at the left */
+  width: 70%; /* Match container width */
+  z-index: 1; /* Set z-index to be on top */
+  background-color: whitesmoke;
+    display: flex; /* Enable flexbox for container */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+
+
+}
+
+.theme-container h2{
+	color: #333333;
+    margin-left: 100px;
+	font-weight: normal;
+	font-size: 25px;
+	text-align: center;
+	position: relative;
+	margin: 40px 0;
+}
+.theme-container p{
+	margin-bottom: 40px;
+}
+.theme-container h2::before{
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 3px;
+	background-color: crimson;
+	bottom: -10px;
+	left: 50%;
+	transform: translate(-50%);
+	animation: animate 4s linear infinite;
+}
+@keyframes animate{
+	0%{
+		width: 100px;
+	}
+	50%{
+		width: 350px;
+	}
+	100%{
+		width: 100px;
+	}
+}
+#themeButtonInner {
+  /* ... other styles ... */
+  opacity: 1; /* Initial opacity (fully visible) */
+  transition: opacity 0.2s ease-in-out; /* Transition for opacity */
+}
+
+.theme-container.expanded #themeButtonInner {
+  opacity: 0; /* Fade out when container expands */
+}
+
+.theme-container.expanded {
+  height: 120px; /* Adjust height as needed */
+  padding: 10px; /* Add padding when expanded */
+  /* Optional styling for expanded state */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow (optional) */
+}
+
+#themeButtonInner {
+  width: 100%; /* Match container width */
+  text-align: left; /* Align text  */
+  border: none; /* Remove default button border */
+  background-color: inherit; /* Inherit background color from container */
+  cursor: pointer; /* Set cursor to pointer on hover */
+  transition: background-color 0.2s ease-in-out; /* Transition for button color */
+  /* Additional styles for button */
+  padding: 10px; /* Consistent padding with expanded state */
+}
+
+#themeButtonInner:hover {
+  background-color: #ddd; /* Change button color on hover (optional) */
+}
+
+#about{
+	height: 70vh;
+	align-items: center;
+}
+.about-convocation{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px 80px;
+	width: 98%;
+	margin-left: 10px;
+	background-color: whitesmoke;
+	margin-top: 20px;
+}
+
+.convo-title {  
+    text-align: center; /* Center the title */
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+.convo-title span{
+    color: #333333;
+    font-size: 24px;
+}
+
+.about-convocation .convo{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 60px;
+	height: 57vh;
+    background-color: white;
+	width: 32%;
+
+	
+}
+.about-convocation .convo .convo-text{
+          font-size: 17px;
+          color: #585858;
+          margin: 10px 0;
+          text-align: justify;
+
+}
+#schedule {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    margin-top: 100px; /* Adjust as needed */
+}
+
+.schedule-all {
+    padding: 40px 80px;
+    border-top: 2px solid #eeeeee;
+    width: 80%; /* Adjust the width to fit the content */
+    max-width: 1200px; 
+    background-color: whitesmoke;
+}
+
+.all {
+    text-align: center;
+
+}
+
+.all h3 {
+    font-size: 24px;
+    color: #333333;
+    
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.all table {
+    width: 100%; /* Ensure the table occupies the entire width of its container */
+    border-collapse: collapse; /* Change border-collapse to collapse */
+}
+
+.all th,
+.all td {
+    border: 1px solid #333333;
+    padding: 10px;
+    background-color: white;
+ /*   text-align: left; */
+}
+.all th:nth-child(1){
+	width: 20%;
+}
+.all th:nth-child(3),
+.all td:nth-child(3) {
+    width: 20%; /* Adjust the width as needed */
+}
+
+.all th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.galle{
+	width: 100%;
+	text-align: center;
+}
+
+.galle h2{
+	font-weight: normal;
+	font-size: 35px;
+	text-align: center;
+	position: relative;
+	margin: 40px 0;
+}
+.galle h2::before{
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 3px;
+	background-color: crimson;
+	bottom: -10px;
+	left: 50%;
+	transform: translate(-50%);
+	animation: animate 4s linear infinite;
+}
+@keyframes animate{
+	0%{
+		width: 100px;
+	}
+	50%{
+		width: 350px;
+	}
+	100%{
+		width: 100px;
+	}
+}
+.gallery{
+    min-height: 100vh;
+    background: #eee;
+    padding-bottom: 100px;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.gallery h3{
+	height: 100%;
+	background-color: rgb(221, 221, 221);
+	line-height: 60px;
+	padding: 0 50px;
+	color: white;
+}
+
+.gallery .controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:20px 0;
+    list-style: none;
+
+}
+
+.gallery .controls .buttons{
+    height:40px;
+    width: 140px;
+    background:#fff;
+    color:#666;
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    margin:20px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    text-align: center;
+    font-weight: 200;
+}
+
+.gallery .controls .buttons.active{
+    background: white;
+    color:crimson;
+}
+
+.gallery .image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery .image-container .image{
+    height:250px;
+    width: 350px;
+    overflow: hidden;
+    border:15px solid #fff;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    margin: 20px;
+}
+
+.gallery .image-container .image img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.gallery .image-container .image:hover img{
+    transform: scale(1.4);
+}
+
+.footer{
+	background-color: #303f49;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px 80px;
+}
+.footer .copy{
+	color: #fff;
+}
+.bottom-links{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 40px 0;
+}	
+.bottom-links .links{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 40px;
+}
+.bottom-links .links span{
+	font-size: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 10px 0;
+}
+.bottom-links .links a{
+	text-decoration: none;
+	color: #a1a1a1;
+	padding: 10px 20px;
+}
