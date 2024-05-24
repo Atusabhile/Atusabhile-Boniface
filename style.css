@@ -51,6 +51,10 @@
 	display: flex;
 	list-style: none;
 }
+.menu-toggle {
+    display: none; /* Hide by default on larger screens */
+    cursor: pointer;
+}
 .menu li{
 	margin-left: 20px;
 
@@ -231,6 +235,90 @@
   background-color: #ddd; /* Change button color on hover (optional) */
 }
 
+@media (max-width: 768px) {
+    
+    .intro h2 {
+        font-size: 28px;
+    }
+    .intro p1 {
+        font-size: 18px;
+    }
+    .intro button {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 576px) {
+   
+    .intro h2 {
+        font-size: 24px;
+    }
+    .intro p1 {
+        font-size: 16px;
+    }
+    .intro button {
+        font-size: 14px;
+        padding: 6px 15px;
+    }
+    .theme-container {
+        width: 90%;
+        left: 5%;
+    }
+}
+
+
+/* Media query for tablets in portrait mode (adjust breakpoints as needed) */
+@media (max-width: 768px) {
+
+  /* Adjust layout for two columns to stack vertically */
+  .two-column-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Reduce image width to prevent overflow */
+  .article-image {
+    max-width: 90%;
+  }
+
+  /* Increase font size for better readability */
+  h2 {
+    font-size: 1.5em;
+  }
+
+  /* Hide unnecessary navigation elements on mobile */
+  .navigation-menu li:nth-child(n+4) {
+    display: none;
+  }
+}
+
+/* Media query for larger screens (adjust breakpoints as needed) */
+@media (min-width: 992px) {
+
+  /* Revert to multi-column layout */
+  .two-column-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Allow wider images for larger screens */
+  .article-image {
+    max-width: 70%;
+  }
+
+  /* Reset font size to default */
+  h2 {
+    font-size: 1.8em;
+  }
+
+  /* Show all navigation elements */
+  .navigation-menu li {
+    display: block;
+  }
+}
+
+
 #about{
 	height: 70vh;
 	align-items: center;
@@ -238,7 +326,7 @@
 .about-convocation{
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	padding: 40px 80px;
 	width: 98%;
 	margin-left: 10px;
@@ -327,6 +415,106 @@
     background-color: #f2f2f2;
     font-weight: bold;
 }
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .nav-bar {
+        padding: 15px 40px;
+    }
+    .menu li a {
+        font-size: 18px;
+    }
+    .about-convocation {
+        padding: 20px 40px;
+    }
+    .about-convocation .convo {
+        width: 45%;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-bar {
+        padding: 10px 20px;
+    }
+    .menu li a {
+        font-size: 16px;
+    }
+    .intro h2 {
+        font-size: 30px;
+    }
+    .intro p1 {
+        font-size: 20px;
+    }
+    .intro button {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+    .theme-container {
+        width: 80%;
+        left: 10%;
+    }
+    .about-convocation {
+        flex-direction: column;
+        align-items: center;
+        height: 200%;
+    }
+   
+    #schedule {
+        margin-top: 70%;
+        width: 122%;
+         }
+    .about-convocation .convo {
+        width: 80%;
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 10px 15px;
+    }
+    .menu li a {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+    .intro h2 {
+        font-size: 28px;
+    }
+    .intro p1 {
+        font-size: 18px;
+    }
+    .intro button {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+    .theme-container {
+        width: 80%;
+        left: 10%;
+    }
+    	.about-convocation {
+    height: 240%;  
+    padding: 20px;
+  }
+  
+
+
+    #schedule {
+        margin-top: 140%;
+        width: 122%;
+         }
+    
+    .about-convocation .convo {
+        width: 90%;
+        margin: 10px 0; 
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
 .galle{
 	width: 100%;
 	text-align: center;
@@ -432,37 +620,133 @@
     transform: scale(1.4);
 }
 
-.footer{
-	background-color: #303f49;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 40px 80px;
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    background-color: #3276B1;
+    padding: 60px 2%;
+    width: 100%;
 }
-.footer .copy{
-	color: #fff;
+
+.footer-col ul{
+    list-style: none;
 }
-.bottom-links{
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	padding: 40px 0;
-}	
-.bottom-links .links{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 0 40px;
+
+.footer-col{
+    width: 20%;
+    font-family: sans-serif;
+
 }
-.bottom-links .links span{
-	font-size: 20px;
-	color: #fff;
-	text-transform: uppercase;
-	padding: 10px 0;
+
+.footer-col h4{
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
 }
-.bottom-links .links a{
-	text-decoration: none;
-	color: #a1a1a1;
-	padding: 10px 20px;
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background-color: white;
+    height: 2px;
+    width: 40px;
+	animation: animate 4s linear infinite;
+}
+@keyframes animate{
+	0%{
+		width: 10px;
+	}
+	50%{
+		width: 70px;
+	}
+	100%{
+		width: 10px;
+	}
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a{
+    display: block;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.footer-col ul li a:hover{
+    color: black;
+    padding-left: 2px;
+}
+
+.footer-col .links a{
+    display: inline-block;
+    height: 44px;
+    width: 40px;
+    color: white;
+    background-color: rgba(40, 130, 214, 0.8);
+    margin: 0 8px 8px 0;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.footer-col .links a:hover{
+    color: #4d4f55;
+    background-color: white;
+}
+.footer-col p{
+	margin-left: 10px;
+	color: white;
+}
+.footer-text{
+	color: white;
+	font-size: 15px;
+	margin-left: 25%;
+	margin-top: 100px;
+}
+.blinking {
+  animation: blink 1s infinite ease-in-out;
+  color: gold;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media(max-width: 740px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .footer-col h4::before{
+        all: unset;
+    }
+}
+
+@media(max-width: 555px){
+    .footer-col{
+        width: 100%;
+    }
 }
